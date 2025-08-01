@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './style/index.css'
-import App from './componants/App'
+import Grid from './componants/Grid'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root')
   );
-root.render(<App />);
+root.render(<Grid />);
