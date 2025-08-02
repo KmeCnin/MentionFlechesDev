@@ -13,26 +13,3 @@ html, body {
   width: 100vw;
   height: 100vh;
 }
-
-.grid_empty{
-  background-color: gray;
-  box-sizing: border-box;
-  border: 1px solid black;
-}
-.grid_item {
-  box-sizing: border-box;
-  border: 1px solid black;
-}
-
-.grid_definition {
-  box-sizing: border-box;
-  border: 1px solid black;
-  font-size: 0.7rem;
-  background-color: gray;
-  
-  /* Ajouts pour centrer le contenu */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
