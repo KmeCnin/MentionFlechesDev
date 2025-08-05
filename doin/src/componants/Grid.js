@@ -1,7 +1,7 @@
 import '../style/Grid.css';
 import words from '../datas/words';
 import Cell from './Cell';
-import Definition from './Definition';
+import Definition from './Definitions';
 
 const size_lar = 26; 
 const size_lon = 29; 
@@ -24,40 +24,63 @@ function getLetter(x, y) {
   }
 }
 
+function getDefinitions(x, y) {
+
+  let defs = []
+
+  // 1, 8 
+  for(let l=0;l<words.length;l++){
+    if(words[l].direction==='horizontal'){
+      if(x===words[l].x && y+1===words[l].y){
+        defs.push(words[l].definition)
+      }
+    }
+    if(words[l].direction==='vertical'){
+      if(x+1===words[l].x && y===words[l].y){
+        defs.push(words[l].definition)
+      }
+    }
+  }
+  return defs
+}
+
 function Grid() {
 
   const grid = []; 
-  const grid_with_words = []; 
-
+  const grid_cells = []; 
+ 
   for (let x = 1; x<= size_lon; x++){
     for (let y = 1; y<= size_lar; y++)
     { 
-      grid_with_words.push(getLetter(x,y))
+      let letter = getLetter(x,y)
+      if(letter!==undefined){
+        grid_cells.push(letter)
+      }
+      else{
+        grid_cells.push(getDefinitions(x,y))
+      }
     }
   }
 
-
-  console.log(grid_with_words)
-
-  for (let x = 1; x<= size_lon; x++){
-    for (let y = 1; y<= size_lar; y++)
-    {
-      const index = (x - 1) * size_lar + (y - 1); // meilleure façon de calculer index
-
-
-      if(x === grid_with_words[index].x && y === grid_with_words[index].y){
-        grid.push(
-          <Cell x={x} y={y} className={'cell_item'} letter={grid_with_words[index]}/>
+  for (let i=0; i<grid_cells.length; i++){
+    if(typeof grid_cells[i] === "string"){
+      grid.push(
+          <Cell x={i} y={i} className={'cell_item'} letter={grid_cells[i]}/>
         )
+      }
+      else if (typeof grid_cells[i] === "object") {
+        grid.push(
+          <Definition x={i} y={i} />
+        ) 
       }
       else{
         grid.push(
-          <Cell x={x} y={y} className={'cell_empty'} />
+          <Cell x={i} y={i} className={'cell_empty'} />
         )
       }
     }
-        
-  }
+    
+
 
   /*for (let x = 1; x <= size_lon; x++) {
     for (let y = 1; y <= size_lar; y++) {
