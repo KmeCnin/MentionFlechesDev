@@ -1,15 +1,23 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-
 .grid_container {
   display: grid;
-  grid-template-columns: repeat(26, calc(100vw / 26));
-  grid-template-rows: repeat(29, calc(100vh / 29));
-  width: 100vw;
-  height: 100vh;
+  flex: 1; 
+  border: '1px solid black'; 
+  grid-template-columns: repeat(26, 1fr); /* 26 colonnes égales */
+  max-width: 100vh; /* on bloque la largeur max pour que ça reste carré */
+  aspect-ratio: 26 / 29; /* ça garde le ratio de colonnes/lignes */
+  margin: left;
+  overflow-y: auto; /* Scroll vertical indépendant */
+}
+
+.cell_empty,
+.cell_item,
+.cell_definition {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgb(58, 58, 58);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

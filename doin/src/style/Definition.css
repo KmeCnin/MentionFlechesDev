@@ -1,12 +1,5 @@
+
 .cell_definition {
-  box-sizing: border-box;
-  border: 1px solid black;
-  font-size: 0.7rem;
   background-color: gray;
-  
-  /* Ajouts pour centrer le contenu */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
+  font-size: 0.7rem;
 }

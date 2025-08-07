@@ -1,0 +1,7 @@
+.app_container {
+  display: flex;
+  width: 100vw; /* largeur totale de la fenêtre */
+  height: 100vh; /* optionnel, pour la hauteur de la page */
+  margin: 0;
+  padding: 0;
+}

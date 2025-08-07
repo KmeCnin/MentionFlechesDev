@@ -1,12 +1,16 @@
 import '../style/Definition.css';
 
-   /*   {props.direction ? '>' : +'V'}*/
-
 function Definitions(props) {
 
+  const handleClick = () => {
+    console.log('Cellule cliquée en position');
+  };
+
   return (
-    <div key= {props.x.toString() + '-' + props.y.toString()} className='cell_definition'>
-      {'def'}
+    <div key= {props.x.toString() + '-' + props.y.toString()} className={'cell_definition'} onClick={handleClick}>
+      {props.length <= 5
+      ? (props.direction === 'horizontal' ? '>' : 'v')
+      : '>v'}
     </div>
   );
 }

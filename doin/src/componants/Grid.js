@@ -15,7 +15,7 @@ function getLetter(x, y) {
           return words[l].word[i]
         }
       }
-      else{
+      if (words[l].direction==='vertical') {
         if(x===words[l].x+i && y===words[l].y){
           return words[l].word[i]
         }
@@ -27,17 +27,25 @@ function getLetter(x, y) {
 function getDefinitions(x, y) {
 
   let defs = []
-
-  // 1, 8 
   for(let l=0;l<words.length;l++){
-    if(words[l].direction==='horizontal'){
+    if(words[l].direction==='horizontal' && words[l].y !== 1){
       if(x===words[l].x && y+1===words[l].y){
-        defs.push(words[l].definition)
+        defs.push(words[l].definition, words[l].word, words[l].x, words[l].y, words[l].direction)
       }
     }
-    if(words[l].direction==='vertical'){
+    if (words[l].direction==='horizontal' && words[l].y === 1) {
       if(x+1===words[l].x && y===words[l].y){
-        defs.push(words[l].definition)
+        defs.push(words[l].definition, words[l].word, words[l].x, words[l].y, words[l].direction)
+      }
+    }
+    if(words[l].direction==='vertical' && words[l].x !== 1){
+      if(x+1===words[l].x && y===words[l].y){
+        defs.push(words[l].definition, words[l].word, words[l].x, words[l].y, words[l].direction)
+      }
+    }
+    if (words[l].direction==='vertical' && words[l].x === 1) {
+      if(x===words[l].x && y+1===words[l].y){
+        defs.push(words[l].definition, words[l].word, words[l].x, words[l].y, words[l].direction)
       }
     }
   }
@@ -62,48 +70,31 @@ function Grid() {
     }
   }
 
+
   for (let i=0; i<grid_cells.length; i++){
     if(typeof grid_cells[i] === "string"){
       grid.push(
           <Cell x={i} y={i} className={'cell_item'} letter={grid_cells[i]}/>
         )
       }
-      else if (typeof grid_cells[i] === "object") {
-        grid.push(
-          <Definition x={i} y={i} />
-        ) 
-      }
-      else{
-        grid.push(
-          <Cell x={i} y={i} className={'cell_empty'} />
-        )
-      }
+    else if(grid_cells[i].at(1) !== undefined) {
+      grid.push(
+        <Definition x={i} y={i} length={grid_cells[i].length} direction={grid_cells[i][4]}/>
+      ) 
     }
-    
-
-
-  /*for (let x = 1; x <= size_lon; x++) {
-    for (let y = 1; y <= size_lar; y++) {
-
-      if(def_ho)
-      {
-        <Definition x={def_ho.x} y={def_ho.y} direction = {def_ho.direction}/>
-      }
-      else if(def_ve){
-        <Definition x={def_ve.x} y={def_ve.y} direction = {def_ve.direction}/>
-      }
+    else{
+      grid.push(
+        <Cell x={i} y={i} className={'cell_empty'} />
+      )
+    }
 
     }
-}*/
+    console.log(grid_cells)
 
   return (
     <div className='grid_container'>
-      {grid}
-
-
-      
+      {grid}     
     </div>
-
   );
 }
 
