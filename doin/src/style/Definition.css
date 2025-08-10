@@ -1,5 +1,30 @@
+.info-container {
+  padding: 20px;
+}
 
-.cell_definition {
-  background-color: gray;
-  font-size: 0.7rem;
+.clickable-box:hover {
+  background-color: #ddd;
+}
+
+.info-message {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #d0ebff;
+  border: 1px solid #74c0fc;
+  border-radius: 5px;
+  color: #0b7285;
+  position: relative;
+  max-width: 300px;
+}
+
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: #0b7285;
+  font-size: 16px;
 }

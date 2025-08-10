@@ -1,19 +1,20 @@
 import '../style/Title.css';
+import logo from '../img/mention-logo_icon-blue.png'
 
 function Title() {
 
   return (
     <div className="container">
       <img
-        src="https://via.placeholder.com/50"
+        src={logo}
         alt="Left"
-        className="side-image"
+        className='img_logo'
       />
-      <h1 className="title">Mention</h1>
+      <h3 className="title">Mention Fléchés</h3>
       <img
-        src="https://via.placeholder.com/50"
+        src={logo}
         alt="Right"
-        className="side-image"
+        className='img_logo'
       />
     </div>
   );

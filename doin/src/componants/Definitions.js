@@ -1,18 +1,32 @@
-import '../style/Definition.css';
+import '../style/InfoMessage.css';
+import '../style/Cell.css';
+import arrow_direction from '../utils/tools.js';
 
-function Definitions(props) {
+function Definitions({definition, setDefs, index}) {
 
-  const handleClick = () => {
-    console.log('Cellule cliquée en position');
-  };
+  const onlyDefClick = (event) => {
+
+    const cell_definition = event.target
+    
+    document.querySelector('.cell_definition.selected')?.classList.remove('selected') // récupère toutes, renvoie une NodeList
+
+    if(definition.length !== 0)
+    {
+      setDefs(definition)
+      cell_definition.classList.add('selected')
+    }
+  
+  }
 
   return (
-    <div key= {props.x.toString() + '-' + props.y.toString()} className={'cell_definition'} onClick={handleClick}>
-      {props.length <= 5
-      ? (props.direction === 'horizontal' ? '>' : 'v')
-      : '>v'}
+    <div key={index} className={definition.length !==0 ? "cell_definition" : "cell_empty"} onClick={definition.length !==0 ? onlyDefClick : undefined} >
+    {
+      definition.map((word) => {
+        return arrow_direction(word.direction, word.def_pos)
+      })
+    }
     </div>
-  );
+  )
 }
 
 export default Definitions;

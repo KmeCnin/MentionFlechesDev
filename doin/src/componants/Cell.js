@@ -1,12 +1,16 @@
 import '../style/Cell.css';
 
-function Cell(props) {
-    
+function Cell({index, inputs, setInputs, className}) {
+
+    const updateInput = (index, value) => {
+        inputs[index] = value
+        setInputs(inputs)
+    }
+
     return (
-        <div key= {props.x.toString() + '-' + props.y.toString()} className={props.className}>
-            {props.letter}
-        </div>
+        <input key={index} index={index} className={className} maxLength={1} onChange={(e) => updateInput(index, e.target.value)} >
+        </input>
     );
 }
-
 export default Cell;
+

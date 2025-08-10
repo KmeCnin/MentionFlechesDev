@@ -1,7 +1,24 @@
 .app_container {
   display: flex;
-  width: 100vw; /* largeur totale de la fenêtre */
-  height: 100vh; /* optionnel, pour la hauteur de la page */
-  margin: 0;
-  padding: 0;
+  height: 100vh;    
+  align-items: stretch; 
+}
+
+.info_container {
+  flex: 1;                 
+  display: flex;           
+  flex-direction: column; 
+}
+
+.info_wrapper {
+  flex: 1;                 
+  background-color: #fff;         
+}
+
+.grid_wrapper {
+  flex: 2;
+  width: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
+  background-color: #fff;
 }

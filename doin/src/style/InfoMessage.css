@@ -1,0 +1,25 @@
+.info-message {
+  margin-top: 20px;
+  margin-left: 20px; 
+  padding: 10px 15px;
+  width: fit-content;
+  background-color: #d0ebff;
+  border: 1px solid #74c0fc;
+  border-radius: 5px;
+  color: rgb(11, 114, 132);
+}
+
+.info-message-empty {
+  margin-top: 20px;
+  margin-left: 20px; 
+  padding: 10px 15px;
+  width: fit-content;
+  background-color: #ffffff;
+  border: 1px solid #74c0fc;
+  border-radius: 5px;
+  color: #74c0fc;
+}
+
+.title_def{
+  margin-left: 20px; 
+}
