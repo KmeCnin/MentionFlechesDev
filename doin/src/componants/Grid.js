@@ -98,13 +98,13 @@ function Grid({ setDefs, inputs, setInputs, grid_validation, setGridValidation }
       for(let s=0;s<separateurs.length; s++){
         if(separateurs[s].direction === 'horizontal' && (((separateurs[s].x - 1) * size_lar + (separateurs[s].y - 1 + separateurs[s].separateur)) === i)){
           grid.push(
-            <Cell index={i} inputs={inputs} setInputs={setInputs} className={'cell_item_separateur_horizontal'}/>
+            <Cell index={i} inputs={inputs} setInputs={setInputs} className={'cell_item_separateur_horizontal'} />
           )
           check = true; 
         }
         else if (separateurs[s].direction === 'vertical' && (((separateurs[s].x - 1 + separateurs[s].separateur) * size_lar + (separateurs[s].y - 1)) === i)){
           grid.push(
-            <Cell index={i} inputs={inputs} setInputs={setInputs} className={'cell_item_separateur_vertical'}/>
+            <Cell index={i} inputs={inputs} setInputs={setInputs} className={'cell_item_separateur_vertical'} />
           )
           check = true; 
         }
