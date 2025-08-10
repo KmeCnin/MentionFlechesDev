@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c24e5020.css",
+    "main.js": "/static/js/main.88dee0a1.js",
+    "static/media/mention-logo_icon-blue.png": "/static/media/mention-logo_icon-blue.48260a2114f274e75a16.png",
+    "index.html": "/index.html",
+    "main.c24e5020.css.map": "/static/css/main.c24e5020.css.map",
+    "main.88dee0a1.js.map": "/static/js/main.88dee0a1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c24e5020.css",
+    "static/js/main.88dee0a1.js"
+  ]
+}
