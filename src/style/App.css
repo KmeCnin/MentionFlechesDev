@@ -26,18 +26,20 @@
 @media (max-width: 768px) {
   .app_container {
     flex-direction: column;
-    height: auto; /* pour que ça s’adapte */
   }
 
   .grid_wrapper {
-    max-height: 80vh;
+    height: 80vh;
     overflow-y: auto;
   }
 
 
   .info_container {
-    max-height: 20vh;
-    overflow-y: auto;
-    }
-}
+    height: 20vh;
+    overflow: scroll;
+  }
 
+  .web-only {
+    display: none;
+  }
+}

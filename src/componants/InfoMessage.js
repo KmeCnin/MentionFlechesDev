@@ -4,7 +4,7 @@ import arrow_direction from '../utils/tools.js';
 function InfoMessage({ defs }) {
 
   if (!defs || defs.length === 0) {
-    return <div className="info-message-empty">Aucune définition sélectionnée</div>;
+    return <div className="info-message-empty web-only">Aucune définition sélectionnée</div>;
   }
 
   return (

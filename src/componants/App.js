@@ -22,9 +22,9 @@ function App() {
 
       <div className="info_container">
         <div className="info_wrapper">  
-          <Title />
-            <h4 className="title_def">Los definitiones :</h4>
-            <InfoMessage defs={defs} />
+          <Title defs={defs} />
+          <h4 className="title_def web-only">Los definitiones :</h4>
+          <InfoMessage defs={defs} />
         </div>
         <div className="info_bottom">
           <Validation grid_validation={grid_validation} inputs={inputs} className={'bottom_button'} />

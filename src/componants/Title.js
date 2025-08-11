@@ -1,10 +1,10 @@
 import '../style/Title.css';
 import logo from '../img/mention-logo_icon-blue.png'
 
-function Title() {
+function Title({defs}) {
 
-  return (
-    <div className="container">
+  return defs.length === 0 && (
+    <div className="title-container">
       <img
         src={logo}
         alt="Left"
