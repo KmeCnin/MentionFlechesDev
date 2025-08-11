@@ -32,6 +32,7 @@ jobs:
       - name: Deploy
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           npm install -g gh-pages
-          npx gh-pages -d build -u "github-actions <github-actions@users.noreply.github.com>"
+          npx gh-pages -d build -u "github-actions <github-actions@users.noreply.github.com>" -r https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
