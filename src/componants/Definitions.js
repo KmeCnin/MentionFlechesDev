@@ -7,6 +7,13 @@ function Definitions({definition, setDefs, index}) {
   const onlyDefClick = (event) => {
 
     const cell_definition = event.target
+
+    if (cell_definition.classList.contains('selected')) {
+      setDefs([])
+      cell_definition.classList.remove('selected')
+
+      return
+    }
     
     document.querySelector('.cell_definition.selected')?.classList.remove('selected') // récupère toutes, renvoie une NodeList
 
