@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main   # Or your default branch
+      - main
 
 jobs:
   build-and-deploy:
@@ -34,4 +34,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm install -g gh-pages
-          npm run deploy
+          npx gh-pages -d build -u "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
