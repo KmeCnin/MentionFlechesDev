@@ -3,8 +3,8 @@ import logo from '../img/mention-logo_icon-blue.png'
 
 function Title({defs}) {
 
-  return defs.length === 0 && (
-    <div className="title-container">
+  return (
+    <div className={"title-container" + (defs.length !== 0 ? " web-only" : "")}>
       <img
         src={logo}
         alt="Left"

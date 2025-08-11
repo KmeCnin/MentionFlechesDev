@@ -14,10 +14,8 @@ function App() {
   
   return (
     <div className="app_container">
-      <div>
-        <div className="grid_wrapper">
-          <Grid setDefs={setDefs} inputs={inputs} setInputs={setInputs} grid_validation={grid_validation} setGridValidation={setGridValidation} />
-        </div>
+      <div className="grid_wrapper">
+        <Grid setDefs={setDefs} inputs={inputs} setInputs={setInputs} grid_validation={grid_validation} setGridValidation={setGridValidation} />
       </div>
 
       <div className="info_container">

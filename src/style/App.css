@@ -25,18 +25,26 @@
 
 @media (max-width: 768px) {
   .app_container {
+    display: flex;
     flex-direction: column;
+    min-height: 100dvh;
   }
 
   .grid_wrapper {
-    height: 80vh;
+    flex: 1 1 auto;      /* prend tout le reste */
+    min-height: 0;       /* indispensable pour que le scroll fonctionne */
     overflow-y: auto;
   }
 
-
   .info_container {
-    height: 20vh;
-    overflow: scroll;
+    flex: 0 0 auto;      /* hauteur = contenu */
+    height: auto !important; /* au cas où un height:100% traîne ailleurs */
+    max-height: none;
+    margin: 0;
+  }
+
+  .info-message {
+    margin: 5px;
   }
 
   .web-only {

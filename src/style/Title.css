@@ -13,20 +13,3 @@
     height: 30px;
     width: 30px;
 }
-
-@media (max-width: 768px) {
-  .app_container {
-    flex-direction: column;
-    height: auto; /* pour que ça s’adapte */
-  }
-
-  .grid_wrapper {
-    max-height: 80vh;
-    overflow-y: auto;
-  }
-
-
-  .info_container {
-    overflow: scroll;
-    }
-}
