@@ -24,26 +24,6 @@
 
 
 @media (max-width: 768px) {
-  .app_container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100dvh;
-  }
-
-  .grid_wrapper {
-    flex: 1 1 auto;      /* prend tout le reste */
-    min-height: 0;       /* indispensable pour que le scroll fonctionne */
-    overflow-y: auto;
-  }
-
-  .info_container {
-    flex: 0 0 auto;      /* hauteur = contenu */
-    height: auto !important; /* au cas où un height:100% traîne ailleurs */
-    max-height: none;
-    min-height: fit-content;
-    margin: 0;
-  }
-
   .info-message {
     margin: 5px;
   }
@@ -52,3 +32,63 @@
     display: none;
   }
 }
+
+html, body {
+  height: 100%;
+}
+
+@supports (padding: max(0px)) {
+  /* pour tenir compte des encoches / home indicator */
+  .info_container {
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
+}
+
+.app_container {
+  display: flex;
+  height: 100vh;     /* desktop ok */
+  align-items: stretch;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  .app_container {
+    /* éviter le crop sur mobile */
+    height: auto;                 /* ne pas verrouiller la hauteur */
+    min-height: 100svh;           /* “small viewport” (barres visibles) */
+    /* et tenter d'utiliser la hauteur dynamique quand dispo */
+    height: 100dvh;
+  }
+
+  /* iOS fallback supplémentaire */
+  @supports (-webkit-touch-callout: none) {
+    .app_container {
+      min-height: -webkit-fill-available;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .app_container {
+    display: flex;
+    flex-direction: column;
+    /* pas d'overflow ici : laissez les enfants scroller */
+    overflow: clip;
+  }
+
+  .grid_wrapper {
+    flex: 1 1 auto;
+    min-height: 0;        /* indispensable pour permettre le scroll */
+    overflow-y: auto;
+  }
+
+  .info_container {
+    flex: 0 0 auto;       /* hauteur = contenu */
+    height: auto !important;
+    max-height: none;
+    margin: 0;
+    min-height: 0;        /* évite certains rognages iOS */
+  }
+}
+
