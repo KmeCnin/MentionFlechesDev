@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/MentionFlechesDev/static/css/main.c24e5020.css",
+    "main.js": "/MentionFlechesDev/static/js/main.e4ef084d.js",
+    "static/media/mention-logo_icon-blue.png": "/MentionFlechesDev/static/media/mention-logo_icon-blue.48260a2114f274e75a16.png",
+    "index.html": "/MentionFlechesDev/index.html",
+    "main.c24e5020.css.map": "/MentionFlechesDev/static/css/main.c24e5020.css.map",
+    "main.e4ef084d.js.map": "/MentionFlechesDev/static/js/main.e4ef084d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c24e5020.css",
+    "static/js/main.e4ef084d.js"
+  ]
+}
